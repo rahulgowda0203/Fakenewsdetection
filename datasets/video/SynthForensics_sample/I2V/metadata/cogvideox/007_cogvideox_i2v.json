@@ -1,0 +1,44 @@
+{
+  "generator": "CogVideoX",
+  "task": "i2v-5B",
+  "prompt": "The woman is standing still, facing the camera, holding a microphone with a yellow logo and a black clipboard. She appears to be speaking or reporting, possibly delivering news or information. The background features a large, grand building with multiple columns and flags hanging from it, indicating an official or governmental setting. There is greenery visible in the foreground, suggesting a well-maintained area outside the building. The style is documentary. The shot type is medium shot. The background includes a large, grand building with multiple columns and flags hanging from it, suggesting an official or governmental setting. The foreground shows greenery, indicating a well-maintained area outside the building. The subject keeps their hands still and relaxed throughout the video.",
+  "negative_prompt": "Overexposed, static, blurred, worst quality, low quality, JPEG compression, ugly, incomplete, extra fingers, poorly drawn, deformed, disfigured, misshapen limbs, fused fingers, messy background, three legs, blurred eyes, blurred, fused fingers, extra fingers, mutated hands, poorly drawn hands, malformed hands, deformed hands, hand gestures, gesticulating, waving hands, three arms, extra limbs",
+  "seed": 5805010230061800211,
+  "source_image": "007.png",
+  "num_frames": 49,
+  "fps": 8,
+  "width": 720,
+  "height": 480,
+  "sample_steps": 100,
+  "guide_scale": 6.0,
+  "scheduler": "CogVideoXDPMScheduler",
+  "use_dynamic_cfg": true,
+  "dtype": "bfloat16",
+  "source_caption": "007.json",
+  "generation_time_seconds": 295.2,
+  "environment": {
+    "repo_url": "https://github.com/zai-org/CogVideo.git",
+    "repo_commit": "7a1af71",
+    "model_id": "CogVideoX-5b-I2V",
+    "model_url": "https://huggingface.co/THUDM/CogVideoX-5b-I2V",
+    "model_hf_commit": "a6f0f4858a8395e7429d82493864ce92bf73af11",
+    "model_sha256": {
+      "transformer/diffusion_pytorch_model-00001-of-00003.safetensors": "f2e3060199c34a0d18892a19d687455f938b0ac3d2ea7d48f37cb4090e141965",
+      "transformer/diffusion_pytorch_model-00002-of-00003.safetensors": "1e8d0c62d366b0d9cc3476d2b21ca54afbecea154d54d923da120b2ec174c7e7",
+      "transformer/diffusion_pytorch_model-00003-of-00003.safetensors": "da91a0051da3f39caf10944b7c9aa66b14ddeffb37a25b087c49fc1692c1a361",
+      "vae/diffusion_pytorch_model.safetensors": "a410e48d988c8224cef392b68db0654485cfd41f345f4a3a81d3e6b765bb995e",
+      "text_encoder/model-00001-of-00002.safetensors": "9162b8ae9152e7a8e3bbebc535c8692783f50aec8cd3bb8ef6a751c432dd6392",
+      "text_encoder/model-00002-of-00002.safetensors": "d3edef29693d52402b1cc7c362f031e052f2e9482ed0c765c6351950434349b0"
+    },
+    "python_version": "3.12.12",
+    "torch_version": "2.7.1+cu128",
+    "diffusers_version": "0.37.0",
+    "cuda_version": "12.8",
+    "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "key_deps": {
+      "accelerate": "1.13.0",
+      "transformers": "4.57.6",
+      "sentencepiece": "0.2.1"
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "generator": "Helios",
+  "task": "i2v-14B",
+  "mode": "distilled",
+  "prompt": "The style is the video appears to be a news segment or interview, characterized by a formal and informative style. The shot type is the shot is a medium shot, focusing on the man's upper body and face while he speaks. A man in a suit is speaking into multiple microphones in front of a screen with various images and text. The man, dressed in a dark suit and tie, is positioned centrally in the frame. He is holding two microphones, one from '2M' and another with a different logo. Behind him, there is a large screen displaying images of buildings and text in Arabic, indicating a possible discussion about real estate or urban development projects. The background also features a decorative red and white pattern at the top. The background includes a large screen with images and text, likely related to real estate or urban development projects. The screen displays various images of buildings and plans, with Arabic text providing additional context. The upper part of the background features a decorative red and white pattern. The lighting is artificial, typical of indoor studio settings, with no harsh shadows or natural light sources visible. The atmosphere is professional and informative, suggesting a serious and focused discussion on the topics presented on the screen behind the man. The camera movement is the camera remains static throughout the segment, maintaining a consistent focus on the man and the screen behind him.",
+  "negative_prompt": "Bright tones, overexposed, static, blurred details, subtitles, style, works, paintings, images, static, overall gray, worst quality, low quality, JPEG compression residue, ugly, incomplete, extra fingers, poorly drawn hands, poorly drawn faces, deformed, disfigured, misshapen limbs, fused fingers, still picture, messy background, three legs, many people in the background, walking backwards",
+  "seed": 1631996696,
+  "width": 640,
+  "height": 384,
+  "num_frames": 99,
+  "fps": 24,
+  "guidance_scale": 1.0,
+  "num_inference_steps": 50,
+  "is_enable_stage2": true,
+  "pyramid_num_inference_steps_list": [
+    2,
+    2,
+    2
+  ],
+  "is_amplify_first_chunk": true,
+  "use_zero_init": false,
+  "zero_steps": 1,
+  "image_noise_sigma_min": 0.111,
+  "image_noise_sigma_max": 0.135,
+  "enable_compile": true,
+  "dtype": "bfloat16",
+  "source_caption": "027.json",
+  "source_image": "027.png",
+  "generation_time_seconds": 28.3,
+  "environment": {
+    "repo_url": "https://github.com/PKU-YuanGroup/Helios",
+    "repo_commit": "5cb7ce9",
+    "paper_url": "https://arxiv.org/abs/2603.04379",
+    "model_id": "Helios-Distilled",
+    "model_url": "https://huggingface.co/BestWishYsh/Helios-Distilled",
+    "model_hf_commit": "1999182614cb08d3bdcc46b9827504af2914b87b",
+    "model_parameter_count": "14B",
+    "models": {
+      "transformer": {
+        "path": "Helios-Distilled/transformer",
+        "files": 6,
+        "sha256_shard1": "7be354f061682a7b2ddc96858ae488ea1944fa315109f1b3835b14286cd17df4"
+      },
+      "vae": {
+        "path": "Helios-Distilled/vae",
+        "sha256": "d6e524b3fffede1787a74e81b30976dce5400c4439ba64222168e607ed19e793"
+      },
+      "text_encoder": {
+        "path": "Helios-Distilled/text_encoder",
+        "files": 5,
+        "sha256_shard1": "c0ef3a140898e228a3520c9adec60743d2e8e5b3d229651bb37f1a3921919f99"
+      }
+    },
+    "python_version": "3.11.15",
+    "torch_version": "2.11.0+cu130",
+    "cuda_version": "13.0",
+    "gpu_name": "NVIDIA A100 80GB PCIe",
+    "key_deps": {
+      "torch": "2.11.0+cu130",
+      "torchaudio": "2.11.0+cu130",
+      "torchvision": "0.26.0+cu130",
+      "diffusers": "0.37.1",
+      "transformers": "5.3.0",
+      "flash_attn": "2.8.3",
+      "triton": "3.6.0",
+      "accelerate": "1.12.0",
+      "xformers": "0.0.35"
+    }
+  }
+}

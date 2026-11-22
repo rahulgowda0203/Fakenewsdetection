@@ -1,0 +1,42 @@
+{
+  "generator": "CogVideoX",
+  "task": "t2v-5B",
+  "prompt": "The woman is sitting in a room with a wooden door behind her. She is wearing a black tank top with a white logo on it. The room has beige walls and a bed with a headboard visible in the background. There are some objects on the bed, including what appears to be a framed picture and some other items. The lighting in the room is warm and natural, creating a cozy atmosphere. The camera remains static throughout the video, focusing on the woman as she speaks. The video style is informal and personal, likely intended for a vlog or social media content. The shot type is a medium shot, capturing the upper body of the woman. The background consists of a wooden door and beige walls. There is a bed with a headboard visible, and some objects on the bed, including a framed picture and other items. The setting appears to be a bedroom.",
+  "negative_prompt": "Overexposed, static, blurred, worst quality, low quality, JPEG compression, ugly, incomplete, extra fingers, poorly drawn, deformed, disfigured, misshapen limbs, fused fingers, messy background, three legs, blurred eyes, blurred",
+  "seed": 7941549430502488661,
+  "num_frames": 49,
+  "fps": 8,
+  "width": 720,
+  "height": 480,
+  "sample_steps": 100,
+  "guide_scale": 6.0,
+  "scheduler": "CogVideoXDPMScheduler",
+  "use_dynamic_cfg": true,
+  "dtype": "bfloat16",
+  "source_caption": "717.json",
+  "generation_time_seconds": 341.2,
+  "environment": {
+    "repo_url": "https://github.com/zai-org/CogVideo.git",
+    "repo_commit": "7a1af71",
+    "model_id": "CogVideoX-5b",
+    "model_url": "https://huggingface.co/THUDM/CogVideoX-5b",
+    "model_hf_commit": "8fc5b281006c82b82d34fd2543d2f0ebb4e7e321",
+    "model_sha256": {
+      "transformer/diffusion_pytorch_model-00001-of-00002.safetensors": "b7101be7e75631130cdf4a63ad798452bdce29716aaa47829e882dd384c398bf",
+      "transformer/diffusion_pytorch_model-00002-of-00002.safetensors": "ebe6c0e34a52c89f8ea8032a3a8a278a9ff1880dc70e1e6f3b840bcfd0396647",
+      "vae/diffusion_pytorch_model.safetensors": "a410e48d988c8224cef392b68db0654485cfd41f345f4a3a81d3e6b765bb995e",
+      "text_encoder/model-00001-of-00002.safetensors": "9162b8ae9152e7a8e3bbebc535c8692783f50aec8cd3bb8ef6a751c432dd6392",
+      "text_encoder/model-00002-of-00002.safetensors": "d3edef29693d52402b1cc7c362f031e052f2e9482ed0c765c6351950434349b0"
+    },
+    "python_version": "3.12.12",
+    "torch_version": "2.7.1+cu128",
+    "diffusers_version": "0.37.0",
+    "cuda_version": "12.8",
+    "gpu_name": "NVIDIA A100 80GB PCIe",
+    "key_deps": {
+      "accelerate": "1.13.0",
+      "transformers": "4.57.6",
+      "sentencepiece": "0.2.1"
+    }
+  }
+}
