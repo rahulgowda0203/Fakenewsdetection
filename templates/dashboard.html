@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruthLens | Model Comparison</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="brand">Truth<span>Lens</span></div>
+        <a href="/" class="nav-label">← Back to Detector</a>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <div class="tag">MODEL PERFORMANCE ANALYTICS</div>
+            <h1>Model <span>Comparison.</span></h1>
+            <p>
+                Compare the performance of Machine Learning and
+                Deep Learning models using the same test dataset.
+            </p>
+        </section>
+
+        <section class="detector-card">
+            <h2>Accuracy Comparison</h2>
+
+            <div class="comparison-grid">
+                <div class="metric-card">
+                    <h3>Logistic Regression</h3>
+                    <div class="metric-value">{{ metrics.logistic.accuracy }}%</div>
+                    <p>Machine Learning</p>
+                </div>
+
+                <div class="metric-card">
+                    <h3>BiLSTM</h3>
+                    <div class="metric-value">{{ metrics.bilstm.accuracy }}%</div>
+                    <p>Deep Learning</p>
+                </div>
+            </div>
+
+            <h2 class="dashboard-heading">Performance Metrics</h2>
+
+            <div class="chart-container">
+                <canvas id="performanceChart"></canvas>
+            </div>
+
+            <h2 class="dashboard-heading">Fake News Detection</h2>
+
+            <div class="chart-container">
+                <canvas id="fakeNewsChart"></canvas>
+            </div>
+
+            <h2 class="dashboard-heading">Detailed Model Results</h2>
+
+            <div class="table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Logistic Regression</th>
+                            <th>BiLSTM</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Accuracy</td>
+                            <td>{{ metrics.logistic.accuracy }}%</td>
+                            <td>{{ metrics.bilstm.accuracy }}%</td>
+                        </tr>
+                        <tr>
+                            <td>Macro F1-score</td>
+                            <td>{{ metrics.logistic.macro_f1 }}%</td>
+                            <td>{{ metrics.bilstm.macro_f1 }}%</td>
+                        </tr>
+                        <tr>
+                            <td>Fake Precision</td>
+                            <td>{{ metrics.logistic.fake_precision }}%</td>
+                            <td>{{ metrics.bilstm.fake_precision }}%</td>
+                        </tr>
+                        <tr>
+                            <td>Fake Recall</td>
+                            <td>{{ metrics.logistic.fake_recall }}%</td>
+                            <td>{{ metrics.bilstm.fake_recall }}%</td>
+                        </tr>
+                        <tr>
+                            <td>Fake F1-score</td>
+                            <td>{{ metrics.logistic.fake_f1 }}%</td>
+                            <td>{{ metrics.bilstm.fake_f1 }}%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="insight-box">
+                <h3>Performance Insight</h3>
+                <p>
+                    Logistic Regression achieved higher accuracy and
+                    macro F1-score on the evaluated test set.
+                    BiLSTM is included as a deep learning comparison.
+                </p>
+            </div>
+
+        </section>
+
+        <p class="disclaimer">
+            Results are based on the project's group-separated test dataset
+            containing 4,562 headlines. These are evaluation metrics,
+            not guarantees of future prediction performance.
+        </p>
+
+    </main>
+
+    <footer>
+        <p>TruthLens · Model Performance Dashboard</p>
+    </footer>
+
+    <script>
+        const logistic = {{ metrics.logistic | tojson }};
+        const bilstm = {{ metrics.bilstm | tojson }};
+
+        new Chart(document.getElementById('performanceChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Accuracy', 'Macro F1'],
+                datasets: [
+                    {
+                        label: 'Logistic Regression',
+                        data: [logistic.accuracy, logistic.macro_f1]
+                    },
+                    {
+                        label: 'BiLSTM',
+                        data: [bilstm.accuracy, bilstm.macro_f1]
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: { display: true, text: 'Score (%)' }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('fakeNewsChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Precision', 'Recall', 'F1-score'],
+                datasets: [
+                    {
+                        label: 'Logistic Regression',
+                        data: [
+                            logistic.fake_precision,
+                            logistic.fake_recall,
+                            logistic.fake_f1
+                        ]
+                    },
+                    {
+                        label: 'BiLSTM',
+                        data: [
+                            bilstm.fake_precision,
+                            bilstm.fake_recall,
+                            bilstm.fake_f1
+                        ]
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        title: { display: true, text: 'Score (%)' }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

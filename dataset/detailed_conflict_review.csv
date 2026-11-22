@@ -1,0 +1,89 @@
+normalized_title,title,label,source_file,news_url,label_name
+8 of the world’s most expensive wedding dresses,8 of the world’s most expensive wedding dresses,0,gossipcop_fake.csv,home.bt.com/lifestyle/fashion-beauty/8-of-the-worlds-most-expensive-wedding-dresses-11363904162983,FAKE
+8 of the world’s most expensive wedding dresses,8 of the world’s most expensive wedding dresses,1,gossipcop_real.csv,http://home.bt.com/lifestyle/fashion-beauty/8-of-the-worlds-most-expensive-wedding-dresses-11363904162983,REAL
+abc news radio,ABC News Radio,0,gossipcop_fake.csv,abcnewsradioonline.com/entertainment-news/contestant-corinne-olympios-breaks-silence-about-bachelor-in.html,FAKE
+abc news radio,ABC News Radio,1,gossipcop_real.csv,http://abcnewsradioonline.com/music-news/2017/4/26/jennifer-hudson-finally-receives-her-grammyfrom-ellen-degene.html,REAL
+abc news radio,ABC News Radio,1,gossipcop_real.csv,http://abcnewsradioonline.com/music-news/2018/1/30/legendary-producer-quincy-jones-disses-taylor-swifts-songwri.html,REAL
+abc news radio,ABC News Radio,1,gossipcop_real.csv,http://abcnewsradioonline.com/music-news/2018/7/30/watch-blake-lively-and-ryan-reynolds-cheer-when-they-hear-da.html,REAL
+abc news radio,ABC News Radio,1,gossipcop_real.csv,http://abcnewsradioonline.com/music-news/2014/10/27/sam-hunt-reveals-the-meaning-behind-his-album-title-monteval.html,REAL
+alex rodriguez is reportedly gunning to replace michael strahan at ‘gma’,Alex Rodriguez Is Reportedly Gunning To Replace Michael Strahan At ‘GMA’,0,gossipcop_fake.csv,celebrityinsider.org/alex-rodriguez-is-reportedly-gunning-to-replace-michael-strahan-at-gma-173104/,FAKE
+alex rodriguez is reportedly gunning to replace michael strahan at ‘gma’,Alex Rodriguez Is Reportedly Gunning To Replace Michael Strahan At ‘GMA’,1,gossipcop_real.csv,http://celebrityinsider.org/alex-rodriguez-is-reportedly-gunning-to-replace-michael-strahan-at-gma-173104/,REAL
+"all the members of the british royal family, ranked by net worth","All the Members of the British Royal Family, Ranked by Net Worth",0,gossipcop_fake.csv,time.com/money/5178274/royal-family-net-worth/,FAKE
+"all the members of the british royal family, ranked by net worth","All the Members of the British Royal Family, Ranked by Net Worth",1,gossipcop_real.csv,http://time.com/money/5178274/royal-family-net-worth/,REAL
+"all the members of the british royal family, ranked by net worth","All the Members of the British Royal Family, Ranked by Net Worth",1,gossipcop_real.csv,http://time.com/money/5178274/royal-family-net-worth/,REAL
+billy bush confirms it was trump on 'access hollywood' tape,Billy Bush Confirms It Was Trump on 'Access Hollywood' Tape,0,gossipcop_fake.csv,time.com/5047223/donald-trump-access-hollywood-tape-billy-bush/,FAKE
+billy bush confirms it was trump on 'access hollywood' tape,Billy Bush Confirms It Was Trump on 'Access Hollywood' Tape,1,gossipcop_real.csv,http://time.com/5047223/donald-trump-access-hollywood-tape-billy-bush/,REAL
+bradley cooper,Bradley Cooper,0,gossipcop_fake.csv,metro.co.uk/tag/bradley-cooper/,FAKE
+bradley cooper,Bradley Cooper,1,gossipcop_real.csv,https://en.wikipedia.org/wiki/Bradley_Cooper,REAL
+chris pratt,Chris Pratt,0,gossipcop_fake.csv,ln.is/vdfGa,FAKE
+chris pratt,Chris Pratt,1,gossipcop_real.csv,https://en.wikipedia.org/wiki/Chris_Pratt,REAL
+chris pratt,Chris Pratt,1,gossipcop_real.csv,https://en.wikipedia.org/wiki/Chris_Pratt,REAL
+chris pratt,Chris Pratt,1,gossipcop_real.csv,https://en.wikipedia.org/wiki/Chris_Pratt,REAL
+contact support,Contact Support,0,politifact_fake.csv,http://eveningw.com/breaking-woman-says-offered-big-money-washington-post-accuse-roy-moore-misconduct/,FAKE
+contact support,Contact Support,1,gossipcop_real.csv,http://www.shockingview.com/greys-anatomy-topples-its-patriarchy-by-dismantling-the-harper-avery-myth-for-good/,REAL
+contact support,Contact Support,1,gossipcop_real.csv,http://www.shockingview.com/mtvs-ex-on-the-beach-is-reality-tv-whac-a-mole-that-youll-end-up-enjoying-and-hating-yourself-for-it/,REAL
+contact support,Contact Support,1,gossipcop_real.csv,http://www.shockingview.com/kendall-jenner-rihanna-and-more-epic-celebrity-style-from-coachella-2018/,REAL
+contact support,Contact Support,1,gossipcop_real.csv,http://www.shockingview.com/ultimate-superhero-tournament-vote-in-round-1-now/,REAL
+contact support,Contact Support,1,gossipcop_real.csv,http://www.shockingview.com/kyle-catches-zach-using-a-burner-phone-and-now-megan-might-be-in-danger-on-the-arrangement/,REAL
+contact support,Contact Support,1,gossipcop_real.csv,http://www.shockingview.com/greys-anatomy-tackles-ice-the-day-is-saved-by-an-old-friend/,REAL
+contact support,Contact Support,1,gossipcop_real.csv,http://www.shockingview.com/kate-middleton-to-give-birth-any-minute-inside-her-final-days-of-pregnancy/,REAL
+contact support,Contact Support,1,gossipcop_real.csv,http://www.shockingview.com/youve-probably-never-heard-of-kourtney-kardashians-acne-fighting-foundation/,REAL
+dancing with the stars,Dancing with the Stars,0,gossipcop_fake.csv,abc.go.com/shows/dancing-with-the-stars/cast/tom-bergeron,FAKE
+dancing with the stars,Dancing with the Stars,1,gossipcop_real.csv,https://abc.go.com/shows/dancing-with-the-stars/cast/lindsay-arnold,REAL
+everything you need to know about prince harry and meghan markle's royal wedding,Everything you need to know about Prince Harry and Meghan Markle's royal wedding,0,gossipcop_fake.csv,abcnews.go.com/culture/story/prince-harry-meghan-markles-royal-wedding-53312776,FAKE
+everything you need to know about prince harry and meghan markle's royal wedding,Everything you need to know about Prince Harry and Meghan Markle's royal wedding,1,gossipcop_real.csv,https://abcnews.go.com/GMA/Culture/prince-harry-meghan-markles-royal-wedding/story?id=53312776,REAL
+everything you need to know about prince harry and meghan markle's royal wedding,Everything you need to know about Prince Harry and Meghan Markle's royal wedding,1,gossipcop_real.csv,https://abcnews.go.com/GMA/Culture/prince-harry-meghan-markles-royal-wedding/story?id=53312776,REAL
+female first forum,Female First Forum,0,gossipcop_fake.csv,discussion.femalefirst.co.uk/viewtopic.php?t=728879,FAKE
+female first forum,Female First Forum,0,gossipcop_fake.csv,discussion.femalefirst.co.uk/viewtopic.php?t=228152,FAKE
+female first forum,Female First Forum,0,gossipcop_fake.csv,discussion.femalefirst.co.uk/viewtopic.php?t=752229,FAKE
+female first forum,Female First Forum,0,gossipcop_fake.csv,discussion.femalefirst.co.uk/viewtopic.php?t=752357,FAKE
+female first forum,Female First Forum,0,gossipcop_fake.csv,discussion.femalefirst.co.uk/viewtopic.php?t=751352,FAKE
+female first forum,Female First Forum,0,gossipcop_fake.csv,discussion.femalefirst.co.uk/viewtopic.php?t=737602,FAKE
+female first forum,Female First Forum,0,gossipcop_fake.csv,discussion.femalefirst.co.uk/viewtopic.php?t=749076,FAKE
+female first forum,Female First Forum,0,gossipcop_fake.csv,discussion.femalefirst.co.uk/viewtopic.php?t=751342,FAKE
+female first forum,Female First Forum,0,gossipcop_fake.csv,discussion.femalefirst.co.uk/viewtopic.php?t=751738,FAKE
+female first forum,Female First Forum,0,gossipcop_fake.csv,discussion.femalefirst.co.uk/viewtopic.php?t=752720,FAKE
+female first forum,Female First Forum,0,gossipcop_fake.csv,discussion.femalefirst.co.uk/viewtopic.php?t=752715,FAKE
+female first forum,Female First Forum,1,gossipcop_real.csv,https://discussion.femalefirst.co.uk/viewtopic.php?t=752808,REAL
+female first forum,Female First Forum,1,gossipcop_real.csv,https://discussion.femalefirst.co.uk/viewtopic.php?f=40&t=749032&start=90,REAL
+george clooney,George Clooney,0,gossipcop_fake.csv,www.imdb.com/name/nm0000123/bio,FAKE
+george clooney,George Clooney,1,gossipcop_real.csv,https://www.biography.com/people/george-clooney-9251385,REAL
+how jennifer lopez tamed alex rodriguez: from serial star dater to mvp of her heart,How Jennifer Lopez Tamed Alex Rodriguez: From Serial Star Dater to MVP of Her Heart,0,gossipcop_fake.csv,www.eonline.com/news/955370/how-jennifer-lopez-tamed-alex-rodriguez-from-serial-star-dater-to-mvp-of-her-heart,FAKE
+how jennifer lopez tamed alex rodriguez: from serial star dater to mvp of her heart,How Jennifer Lopez Tamed Alex Rodriguez: From Serial Star Dater to MVP of Her Heart,1,gossipcop_real.csv,https://www.newscabal.co.uk/how-jennifer-lopez-tamed-alex-rodriguez-from-serial-star-dater-to-mvp-of-her-heart/,REAL
+inside beyoncé's weight loss journey 4 months after giving birth to twins,Inside Beyoncé's Weight Loss Journey 4 Months After Giving Birth to Twins,0,gossipcop_fake.csv,www.eonline.com/news/886759/inside-beyonce-s-weight-loss-journey-4-months-after-giving-birth-to-twins,FAKE
+inside beyoncé's weight loss journey 4 months after giving birth to twins,Inside Beyoncé's Weight Loss Journey 4 Months After Giving Birth to Twins,1,gossipcop_real.csv,http://www.trueara.com/inside-beyonces-weight-loss-journey-4-months-after-giving-birth-to-twins,REAL
+jennifer aniston,Jennifer Aniston,0,gossipcop_fake.csv,news.google.com/topics/CAAqJQgKIh9DQkFTRVFvSUwyMHZNRGw1Y21nU0JXVnVMVlZUS0FBUAE,FAKE
+jennifer aniston,Jennifer Aniston,1,gossipcop_real.csv,https://www.biography.com/people/jennifer-aniston-9185599,REAL
+kate middleton had a massive fortune before she was a duchess. here’s what we know about the royal’s net worth,Kate Middleton Had a Massive Fortune Before She Was a Duchess. Here’s What We Know About the Royal’s Net Worth,0,gossipcop_fake.csv,time.com/money/5224398/kate-middleton-net-worth/,FAKE
+kate middleton had a massive fortune before she was a duchess. here’s what we know about the royal’s net worth,Kate Middleton Had a Massive Fortune Before She Was a Duchess. Here’s What We Know About the Royal’s Net Worth,1,gossipcop_real.csv,http://time.com/money/5224398/kate-middleton-net-worth/,REAL
+kim kardashian new baby girl name is chicago,Kim Kardashian New Baby Girl Name Is Chicago,0,gossipcop_fake.csv,time.com/5110246/kim-kardashian-west-new-baby-girl-name/,FAKE
+kim kardashian new baby girl name is chicago,Kim Kardashian New Baby Girl Name Is Chicago,0,gossipcop_fake.csv,time.com/5110246/kim-kardashian-west-new-baby-girl-name/,FAKE
+kim kardashian new baby girl name is chicago,Kim Kardashian New Baby Girl Name Is Chicago,1,gossipcop_real.csv,http://time.com/5110246/kim-kardashian-west-new-baby-girl-name/,REAL
+kim kardashian new baby girl name is chicago,Kim Kardashian New Baby Girl Name Is Chicago,1,gossipcop_real.csv,http://time.com/5110246/kim-kardashian-west-new-baby-girl-name/,REAL
+kim kardashian new baby girl name is chicago,Kim Kardashian New Baby Girl Name Is Chicago,1,gossipcop_real.csv,http://time.com/5110246/kim-kardashian-west-new-baby-girl-name/,REAL
+kylie jenner slams 'altered' photos amid pregnancy rumors,Kylie Jenner slams 'altered' photos amid pregnancy rumors,0,gossipcop_fake.csv,www.foxnews.com/entertainment/2017/11/06/kylie-jenner-slams-altered-photos-amid-pregnancy-rumors.html,FAKE
+kylie jenner slams 'altered' photos amid pregnancy rumors,Kylie Jenner slams 'altered' photos amid pregnancy rumors,1,gossipcop_real.csv,https://www.foxnews.com/entertainment/kylie-jenner-slams-altered-photos-amid-pregnancy-rumors,REAL
+live with kelly and ryan,LIVE with Kelly and Ryan,0,gossipcop_fake.csv,www.tv.com/shows/live-with-kelly-and-ryan/reviews/,FAKE
+live with kelly and ryan,LIVE with Kelly and Ryan,0,gossipcop_fake.csv,kellyandryan.com/uncategorized/ryan-bio/,FAKE
+live with kelly and ryan,Live with Kelly and Ryan,1,gossipcop_real.csv,https://en.wikipedia.org/wiki/Live_with_Kelly_and_Ryan,REAL
+paris jackson and 90210 star trevor donovan are ''just friends'' despite showing pda,Paris Jackson and 90210 Star Trevor Donovan Are ''Just Friends'' Despite Showing PDA,0,gossipcop_fake.csv,www.eonline.com/news/865997/paris-jackson-and-90210-star-trevor-donovan-are-just-friends-despite-showing-pda,FAKE
+paris jackson and 90210 star trevor donovan are ''just friends'' despite showing pda,Paris Jackson and 90210 Star Trevor Donovan Are ''Just Friends'' Despite Showing PDA,1,gossipcop_real.csv,http://www.trueara.com/paris-jackson-and-90210-star-trevor-donovan-are-just-friends-despite-showing-pda,REAL
+"president trump attacks 'lunatic,' 'no-talent,' 'dumbest person' in tv","President Trump Attacks 'Lunatic,' 'No-Talent,' 'Dumbest Person' in TV",0,gossipcop_fake.csv,time.com/4775633/donald-trump-stephen-colbert-cnn-msnbc-chris-cuomo/,FAKE
+"president trump attacks 'lunatic,' 'no-talent,' 'dumbest person' in tv","President Trump Attacks 'Lunatic,' 'No-Talent,' 'Dumbest Person' in TV",1,gossipcop_real.csv,http://time.com/4775633/donald-trump-stephen-colbert-cnn-msnbc-chris-cuomo/,REAL
+rob kardashian and blac chyna reach custody agreement over baby dream,Rob Kardashian and Blac Chyna Reach Custody Agreement Over Baby Dream,0,gossipcop_fake.csv,www.eonline.com/news/880306/rob-kardashian-and-blac-chyna-reach-custody-agreement-over-baby-dream,FAKE
+rob kardashian and blac chyna reach custody agreement over baby dream,Rob Kardashian and Blac Chyna Reach Custody Agreement Over Baby Dream,1,gossipcop_real.csv,https://people.com/tv/rob-kardashian-blac-chyna-reach-custody-agreement-daughter-dream/,REAL
+"royal baby's name is louis arthur charles, will and kate announce","Royal Baby's Name Is Louis Arthur Charles, Will and Kate Announce",0,gossipcop_fake.csv,time.com/5192470/royal-baby-name-louis-arthur-charles/,FAKE
+"royal baby's name is louis arthur charles, will and kate announce","Royal Baby's Name Is Louis Arthur Charles, Will and Kate Announce",1,gossipcop_real.csv,http://time.com/5192470/royal-baby-name-louis-arthur-charles/,REAL
+"royal baby's name is louis arthur charles, will and kate announce","Royal Baby's Name Is Louis Arthur Charles, Will and Kate Announce",1,gossipcop_real.csv,http://time.com/5192470/royal-baby-name-louis-arthur-charles/,REAL
+"royal baby's name is louis arthur charles, will and kate announce","Royal Baby's Name Is Louis Arthur Charles, Will and Kate Announce",1,gossipcop_real.csv,http://time.com/5192470/royal-baby-name-louis-arthur-charles/,REAL
+"simple english wikipedia, the free encyclopedia","Simple English Wikipedia, the free encyclopedia",0,gossipcop_fake.csv,simple.wikipedia.org/wiki/Angelina_Jolie,FAKE
+"simple english wikipedia, the free encyclopedia","Simple English Wikipedia, the free encyclopedia",1,gossipcop_real.csv,https://simple.wikipedia.org/wiki/Hippopotamus,REAL
+the american theatre wing's tony awards®,The American Theatre Wing's Tony Awards®,0,gossipcop_fake.csv,www.tonyawards.com/en_US/nominees/index.html,FAKE
+the american theatre wing's tony awards®,The American Theatre Wing's Tony Awards®,1,gossipcop_real.csv,https://www.tonyawards.com/en_US/multimedia/calendar/,REAL
+the real reason jennifer aniston and justin theroux split,The real reason Jennifer Aniston and Justin Theroux split,0,gossipcop_fake.csv,www.nickiswift.com/110062/real-reason-jennifer-aniston-justin-theroux-split/,FAKE
+the real reason jennifer aniston and justin theroux split,The real reason Jennifer Aniston and Justin Theroux split,1,gossipcop_real.csv,https://pagesix.com/2018/02/16/the-real-reason-jennifer-aniston-and-justin-theroux-split/,REAL
+the real reason jennifer aniston and justin theroux split,The real reason Jennifer Aniston and Justin Theroux split,1,gossipcop_real.csv,https://pagesix.com/2018/02/16/the-real-reason-jennifer-aniston-and-justin-theroux-split/,REAL
+winners & nominees by category,Winners & Nominees by Category,0,gossipcop_fake.csv,www.cmt.com/cmt-music-awards/winners,FAKE
+winners & nominees by category,Winners & Nominees by Category,1,gossipcop_real.csv,http://www.cmt.com/cmt-music-awards/winners,REAL
+winners & nominees by category,Winners & Nominees by Category,1,gossipcop_real.csv,http://www.cmt.com/cmt-music-awards/winners,REAL
+winners & nominees by category,Winners & Nominees by Category,1,gossipcop_real.csv,http://www.mtv.com/movie-and-tv-awards/winners,REAL

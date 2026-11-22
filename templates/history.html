@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction History | TruthLens</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        .history-section {
+            max-width: 1150px;
+            margin: 50px auto;
+            padding: 25px;
+        }
+
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .history-header h1 {
+            color: var(--navy);
+        }
+
+        .history-table-wrapper {
+            overflow-x: auto;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 850px;
+        }
+
+        .history-table th,
+        .history-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+        }
+
+        .history-table th {
+            background: var(--light-blue);
+            color: var(--navy);
+        }
+
+        .history-table tr:hover {
+            background: #f8faff;
+        }
+
+        .fake-badge {
+            color: #c62828;
+            font-weight: 700;
+        }
+
+        .real-badge {
+            color: #16804a;
+            font-weight: 700;
+        }
+
+        .empty-history {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--muted);
+        }
+
+        .back-link {
+            color: var(--blue);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        @media (max-width: 650px) {
+            .history-section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">TruthLens</a>
+            <div>
+                <a href="/" class="nav-label">Detector</a>
+                &nbsp;&nbsp;
+                <a href="/dashboard" class="nav-label">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="history-section">
+
+        <div class="history-header">
+
+<form method="GET" action="/history"
+      style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:25px;">
+
+    <input
+        type="text"
+        name="search"
+        placeholder="Search news headlines..."
+        value="{{ search_query }}"
+        style="flex:1; min-width:200px; padding:12px; border:1px solid #ccc; border-radius:8px;"
+    >
+
+    <select
+        name="model"
+        style="padding:12px; border:1px solid #ccc; border-radius:8px;"
+    >
+        <option value="all" {% if selected_model == "all" %}selected{% endif %}>
+            All Models
+        </option>
+
+        <option value="logistic" {% if selected_model == "logistic" %}selected{% endif %}>
+            Logistic Regression
+        </option>
+
+        <option value="bilstm" {% if selected_model == "bilstm" %}selected{% endif %}>
+            BiLSTM
+        </option>
+    </select>
+
+    <button type="submit"
+            style="padding:12px 22px; border:0; border-radius:8px; background:#2563eb; color:white; cursor:pointer;">
+        Search
+    </button>
+
+    <a href="/history"
+       style="padding:12px 18px; text-decoration:none; border:1px solid #ccc; border-radius:8px;">
+        Reset
+    </a>
+
+</form>
+
+            <div>
+                <h1>Prediction History</h1>
+                <p>Previously analyzed news headlines</p>
+            </div>
+
+            <a href="/" class="back-link">← Back to Detector</a>
+        </div>
+
+        {% if predictions %}
+
+        <div class="history-table-wrapper">
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Headline</th>
+                        <th>Prediction</th>
+                        <th>Confidence</th>
+                        <th>Fake Probability</th>
+                        <th>Real Probability</th>
+                        <th>Model</th>
+                        <th>Date & Time</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for item in predictions %}
+                    <tr>
+                        <td>{{ item.id }}</td>
+
+                        <td>{{ item.headline }}</td>
+
+                        <td>
+                            {% if item.result == "Fake News" %}
+                                <span class="fake-badge">
+                                    {{ item.result }}
+                                </span>
+                            {% else %}
+                                <span class="real-badge">
+                                    {{ item.result }}
+                                </span>
+                            {% endif %}
+                        </td>
+
+                        <td>{{ "%.2f"|format(item.confidence) }}%</td>
+
+                        <td>{{ "%.2f"|format(item.fake_probability) }}%</td>
+
+                        <td>{{ "%.2f"|format(item.real_probability) }}%</td>
+
+                        <td>{{ item.model_name }}</td>
+
+                        <td>{{ item.created_at }}</td>
+                        <td>
+    <form method="POST"
+          action="{{ url_for('delete_prediction', prediction_id=item.id) }}"
+          onsubmit="return confirm('Are you sure you want to delete this prediction?');">
+
+        <button type="submit"
+                style="background:#dc2626; color:white; border:0; padding:8px 13px; border-radius:6px; cursor:pointer;">
+            Delete
+        </button>
+    </form>
+</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        {% else %}
+
+        <div class="empty-history">
+            <h2>No Predictions Yet</h2>
+            <p>Analyze your first news headline to see it here.</p>
+            <br>
+            <a href="/">Start Analyzing News →</a>
+        </div>
+
+        {% endif %}
+
+    </main>
+
+</body>
+</html>

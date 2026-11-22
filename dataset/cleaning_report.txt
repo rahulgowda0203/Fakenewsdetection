@@ -1,0 +1,22 @@
+FAKE NEWS DATASET CLEANING REPORT
+========================================
+Original records: 23196
+Records with valid URLs: 22866
+Unique canonical URLs: 21555
+Conflicting URL groups: 103
+Excluded records: 286
+Manual review records: 3
+Cleaned records: 22910
+
+Conflict categories:
+conflict_category
+SAME TITLE - CONFLICTING LABELS    80
+GENERAL REFERENCE PAGE             22
+MULTIPLE TITLES - SAME URL          1
+
+Cleaned dataset label counts:
+label
+0     5620
+1    17290
+
+Original CSV files were not modified.

@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruthLens | Audio Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="brand">Truth<span>Lens</span></div>
+    <a href="/" class="nav-label">Text Detection</a>
+    <a href="/video" class="nav-label">Video Detection</a>
+    <a href="/dashboard" class="nav-label">Dashboard</a>
+    <a href="/history" class="nav-label">History</a>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <div class="tag">AI AUDIO ANALYSIS</div>
+        <h1>Detect <span>AI Voices.</span></h1>
+        <p>Upload an audio recording to analyse whether the voice resembles an AI-generated voice or a human voice.</p>
+    </section>
+
+    <section class="detector-card">
+        <h2>Audio Deepfake Detector</h2>
+        <p class="subtitle">Upload an audio file for AI-powered voice analysis.</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <label for="audio">Select audio file</label>
+            <input type="file" id="audio" name="audio"
+                   accept=".wav,.flac" required>
+
+            <button type="submit">Analyze Audio →</button>
+        </form>
+
+        {% if error %}
+            <div class="error-box">{{ error }}</div>
+        {% endif %}
+
+        {% if prediction %}
+            <div class="result-box">
+                <div class="result-label">AUDIO MODEL PREDICTION</div>
+                <h3>{{ prediction.prediction }}</h3>
+                <p>Model confidence:
+                    <strong>{{ prediction.confidence }}%</strong>
+                </p>
+            </div>
+
+            <div class="probability-card">
+                <h3>Voice Classification Probabilities</h3>
+
+                {% for label, value in prediction.probabilities.items() %}
+                    <div class="probability-heading">
+                        <span>{{ label }}</span>
+                        <strong>{{ value }}%</strong>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill"
+                             style="width: {{ value }}%">
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </section>
+
+    <p class="disclaimer">
+        Disclaimer: This model estimates whether an audio sample resembles
+        an AI-generated or human voice. It cannot establish the factual
+        accuracy of spoken claims or prove who created a recording.
+    </p>
+
+</main>
+
+<footer>
+    <p>TruthLens · AI Audio Detection</p>
+</footer>
+
+</body>
+</html>

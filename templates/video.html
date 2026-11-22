@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruthLens | Video Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="brand">Truth<span>Lens</span></div>
+    <a href="/" class="nav-label">Text Detection</a>
+    <a href="/audio" class="nav-label">Audio Detection</a>
+    <a href="/dashboard" class="nav-label">Dashboard</a>
+    <a href="/history" class="nav-label">History</a>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <div class="tag">AI VIDEO ANALYSIS</div>
+        <h1>Analyze <span>Video Frames.</span></h1>
+        <p>Upload a video to examine selected frames for potential visual manipulation signals.</p>
+    </section>
+
+    <section class="detector-card">
+        <h2>Video Deepfake Detector</h2>
+        <p class="subtitle">Upload a video for frame-by-frame AI analysis.</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <label for="video">Select video file</label>
+            <input type="file" id="video" name="video"
+                   accept=".mp4,.avi,.mov,.mkv" required>
+
+            <button type="submit">Analyze Video →</button>
+        </form>
+
+        {% if error %}
+            <div class="error-box">{{ error }}</div>
+        {% endif %}
+
+        {% if prediction %}
+            <div class="result-box">
+                <div class="result-label">VIDEO MODEL ANALYSIS</div>
+                <h3>{{ prediction.overall_result }}</h3>
+
+                <p>Frames analyzed:
+                    <strong>{{ prediction.total_frames_analyzed }}</strong>
+                </p>
+
+                <p>Potentially fake frames:
+                    <strong>{{ prediction.fake_frames }}</strong>
+                </p>
+
+                <p>Frames classified as real:
+                    <strong>{{ prediction.real_frames }}</strong>
+                </p>
+
+                <p>Fake-frame percentage:
+                    <strong>{{ prediction.fake_percentage }}%</strong>
+                </p>
+            </div>
+
+            <div class="probability-card">
+                <h3>Individual Frame Results</h3>
+
+                {% for frame in prediction.frame_results %}
+                    <div class="probability-heading">
+                        <span>Frame {{ frame.frame }} — {{ frame.prediction }}</span>
+                        <strong>{{ frame.confidence }}%</strong>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </section>
+
+    <p class="disclaimer">
+        Disclaimer: This experimental model analyses selected individual
+        frames. Its predictions are not proof that a video is manipulated,
+        authentic, or factually misleading.
+    </p>
+
+</main>
+
+<footer>
+    <p>TruthLens · AI Video Detection</p>
+</footer>
+
+</body>
+</html>
