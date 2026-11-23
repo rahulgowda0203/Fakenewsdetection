@@ -23,20 +23,17 @@ DATABASE = BASE_DIR / "prediction_history.db"
 app = Flask(__name__)
 
 # =====================================================
-# AUDIO AND VIDEO UPLOAD CONFIGURATION
+# AUDIO UPLOAD CONFIGURATION
 # =====================================================
 
 UPLOAD_DIR = BASE_DIR / "uploads"
 AUDIO_UPLOAD_DIR = UPLOAD_DIR / "audio"
-VIDEO_UPLOAD_DIR = UPLOAD_DIR / "video"
 
 AUDIO_UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
-VIDEO_UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 app.config["MAX_CONTENT_LENGTH"] = 100 * 1024 * 1024
 
 ALLOWED_AUDIO = {"wav", "flac"}
-ALLOWED_VIDEO = {"mp4", "avi", "mov", "mkv"}
 # =====================================================
 # DATABASE INITIALIZATION
 # =====================================================
@@ -336,53 +333,6 @@ def audio_detection():
         error=error
     )
 
-
-# =====================================================
-# VIDEO DEEPFAKE DETECTION
-# =====================================================
-
-@app.route("/video", methods=["GET", "POST"])
-def video_detection():
-
-    prediction = None
-    error = None
-
-    if request.method == "POST":
-
-        uploaded_file = request.files.get("video")
-
-        if not uploaded_file or not uploaded_file.filename:
-            error = "Please select a video file."
-
-        else:
-            extension = uploaded_file.filename.rsplit(".", 1)[-1].lower()
-
-            if extension not in ALLOWED_VIDEO:
-                error = "Please upload MP4, AVI, MOV or MKV video."
-
-            else:
-                filename = f"{uuid.uuid4().hex}.{extension}"
-                file_path = VIDEO_UPLOAD_DIR / filename
-
-                try:
-                    uploaded_file.save(file_path)
-
-                    from video_detector import detect_video
-
-                    prediction = detect_video(str(file_path))
-
-                except Exception as exc:
-                    error = f"Video analysis failed: {exc}"
-
-                finally:
-                    if file_path.exists():
-                        file_path.unlink()
-
-    return render_template(
-        "video.html",
-        prediction=prediction,
-        error=error
-    )
 
 @app.route("/dashboard")
 def dashboard():
