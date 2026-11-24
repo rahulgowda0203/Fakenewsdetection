@@ -1,0 +1,8 @@
+{
+  "successful": [
+    "Logistic Regression",
+    "CNN",
+    "BILSTM"
+  ],
+  "failures": []
+}

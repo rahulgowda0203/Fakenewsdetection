@@ -1,0 +1,469 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Detection | TruthLens AI</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f6fc;
+            color: #1e293b;
+            min-height: 100vh;
+        }
+
+        nav {
+            background: #101b35;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: #dbeafe;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #38bdf8;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 45px auto;
+            padding: 0 20px;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .heading h1 {
+            font-size: 32px;
+            color: #14213d;
+            margin-bottom: 12px;
+        }
+
+        .heading p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+            margin-bottom: 25px;
+        }
+
+        .card h2 {
+            color: #14213d;
+            margin-bottom: 20px;
+            font-size: 21px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin: 18px 0 9px;
+            color: #334155;
+        }
+
+        select,
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+            background: #fff;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .hint {
+            font-size: 13px;
+            color: #64748b;
+            margin-top: 7px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 25px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 14px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .result {
+            border-top: 4px solid #2563eb;
+        }
+
+        .result-title {
+            font-size: 25px;
+            color: #14213d;
+            margin: 12px 0;
+        }
+
+        .result-description {
+            color: #64748b;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .probability {
+            margin: 18px 0;
+        }
+
+        .probability-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .progress {
+            height: 12px;
+            background: #e2e8f0;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 20px;
+            background: #2563eb;
+        }
+
+        .green {
+            background: #16a34a;
+        }
+
+        .orange {
+            background: #f59e0b;
+        }
+
+        .red {
+            background: #dc2626;
+        }
+
+        .note {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 14px;
+            margin-top: 20px;
+            border-radius: 5px;
+            color: #334155;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            padding: 13px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .metric:last-child {
+            border-bottom: none;
+        }
+
+        .metric strong {
+            color: #2563eb;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        @media(max-width: 650px) {
+            nav {
+                justify-content: center;
+            }
+
+            nav div:last-child {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .heading h1 {
+                font-size: 26px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">TruthLens <span>AI</span></div>
+
+    <div>
+        <a href="/">Text Detection</a>
+        <a href="/audio">Audio Detection</a>
+        <a href="/image" class="active">Image Detection</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/history">History</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="heading">
+        <h1>AI Image Detection</h1>
+        <p>Analyze image authenticity and verify whether a news image matches its caption.</p>
+    </div>
+
+    <div class="card">
+
+        <h2>Upload Image for Analysis</h2>
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <form method="POST" action="/image" enctype="multipart/form-data">
+
+            <label for="detection_mode">Select Detection Mode</label>
+
+            <select name="detection_mode" id="detection_mode"
+                    onchange="toggleCaption()">
+
+                <option value="authenticity"
+                    {% if selected_mode == 'authenticity' %}selected{% endif %}>
+                    AI Image Authenticity
+                </option>
+
+                <option value="context"
+                    {% if selected_mode == 'context' %}selected{% endif %}>
+                    News Image Context Verification
+                </option>
+
+            </select>
+
+            <label for="image">Upload Image</label>
+
+            <input type="file"
+                   name="image"
+                   id="image"
+                   accept=".jpg,.jpeg,.png,.webp,.bmp"
+                   required>
+
+            <p class="hint">
+                Supported formats: JPG, JPEG, PNG, WEBP and BMP.
+            </p>
+
+            <div id="caption-section">
+
+                <label for="caption">News Caption</label>
+
+                <textarea name="caption"
+                          id="caption"
+                          placeholder="Enter the news caption associated with this image...">{{ caption }}</textarea>
+                <button type="submit">Analyze Headline <span>→</span></button>
+                <p class="hint">
+                    Required only for News Image Context Verification.
+                </p>
+
+            </div>
+
+            <button type="submit">Analyze Image</button>
+
+        </form>
+
+    </div>
+
+    {% if authenticity_result %}
+
+    <div class="card result">
+
+        <h2>Image Authenticity Result</h2>
+
+        <div class="result-title">
+            {{ authenticity_result.prediction }}
+        </div>
+
+        <p class="result-description">
+            The model has analyzed the uploaded image using the
+            MobileNetV2-based image authenticity classifier.
+        </p>
+
+        <div class="metric">
+            <span>Prediction Confidence</span>
+            <strong>{{ authenticity_result.confidence }}%</strong>
+        </div>
+
+        <div class="probability">
+            <div class="probability-header">
+                <span>Likely Real</span>
+                <span>{{ authenticity_result.real_probability }}%</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-fill green"
+                     style="width: {{ authenticity_result.real_probability }}%">
+                </div>
+            </div>
+        </div>
+
+        <div class="probability">
+            <div class="probability-header">
+                <span>Potentially AI-Generated</span>
+                <span>{{ authenticity_result.fake_probability }}%</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-fill red"
+                     style="width: {{ authenticity_result.fake_probability }}%">
+                </div>
+            </div>
+        </div>
+
+        <div class="note">
+            Note: This is an experimental classifier. Its prediction is
+            not definitive proof that an image is real or AI-generated.
+        </div>
+
+    </div>
+
+    {% endif %}
+
+
+    {% if context_result %}
+
+    <div class="card result">
+
+        <h2>News Image Context Result</h2>
+
+        <div class="result-title">
+            {{ context_result.prediction }}
+        </div>
+
+        <p class="result-description">
+            The system compares the uploaded image and its news caption
+            using CLIP ViT-L/14 features and an experimental classifier.
+        </p>
+
+        <div class="metric">
+            <span>CLIP Cosine Similarity</span>
+            <strong>{{ context_result.similarity }}</strong>
+        </div>
+
+        <h2 style="margin-top:25px;">Class Probabilities</h2>
+
+        {% for label, probability in context_result.probabilities.items() %}
+
+        <div class="probability">
+
+            <div class="probability-header">
+                <span>{{ label }}</span>
+                <span>{{ probability }}%</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-fill
+                    {% if label == 'True' %}green
+                    {% elif label == 'Miscaptioned' %}orange
+                    {% else %}red{% endif %}"
+                    style="width: {{ probability }}%">
+                </div>
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+        <div class="note">
+            {{ context_result.note }}
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+<footer>
+    TruthLens AI | Multimodal Fake News Detection System
+</footer>
+
+<script>
+    function toggleCaption() {
+        const mode = document.getElementById("detection_mode").value;
+        const section = document.getElementById("caption-section");
+        const caption = document.getElementById("caption");
+
+        if (mode === "context") {
+            section.style.display = "block";
+            caption.required = true;
+        } else {
+            section.style.display = "none";
+            caption.required = false;
+        }
+    }
+
+    toggleCaption();
+</script>
+
+</body>
+</html>

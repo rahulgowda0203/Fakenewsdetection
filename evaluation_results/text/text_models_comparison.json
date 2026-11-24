@@ -1,0 +1,32 @@
+[
+  {
+    "Model":"Logistic Regression",
+    "Samples":4562,
+    "Accuracy":0.8522577817,
+    "Precision (Macro)":0.8234056079,
+    "Recall (Macro)":0.7475569913,
+    "F1 (Macro)":0.7740453622,
+    "ROC-AUC":0.8746895877,
+    "Log Loss":0.3571464413
+  },
+  {
+    "Model":"CNN",
+    "Samples":4562,
+    "Accuracy":0.8960982025,
+    "Precision (Macro)":0.8764343528,
+    "Recall (Macro)":0.8299804099,
+    "F1 (Macro)":0.8496310433,
+    "ROC-AUC":0.9335224585,
+    "Log Loss":0.2790997572
+  },
+  {
+    "Model":"BILSTM",
+    "Samples":4562,
+    "Accuracy":0.8081981587,
+    "Precision (Macro)":0.7450045188,
+    "Recall (Macro)":0.6877367662,
+    "F1 (Macro)":0.7067769113,
+    "ROC-AUC":0.7266825836,
+    "Log Loss":0.8402038583
+  }
+]

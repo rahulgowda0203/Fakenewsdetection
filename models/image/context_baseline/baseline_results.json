@@ -1,0 +1,32 @@
+{
+    "logistic_regression": {
+        "validation_accuracy": 0.5031847133757962
+    },
+    "svm": {
+        "validation_accuracy": 0.39490445859872614
+    },
+    "selected_model": "logistic_regression",
+    "test_accuracy": 0.5051020408163265,
+    "confusion_matrix": [
+        [
+            28,
+            18,
+            17
+        ],
+        [
+            17,
+            33,
+            13
+        ],
+        [
+            21,
+            11,
+            38
+        ]
+    ],
+    "classes": [
+        "true",
+        "miscaptioned",
+        "out-of-context"
+    ]
+}

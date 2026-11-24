@@ -1,0 +1,96 @@
+{
+  "samples": 374,
+  "accuracy": 0.9866310160427807,
+  "precision_macro": 0.9867562929061785,
+  "recall_macro": 0.9866310160427807,
+  "f1_macro": 0.9866301557908584,
+  "precision_weighted": 0.9867562929061785,
+  "recall_weighted": 0.9866310160427807,
+  "f1_weighted": 0.9866301557908586,
+  "confusion_matrix": [
+    [
+      183,
+      4
+    ],
+    [
+      1,
+      186
+    ]
+  ],
+  "classification_report": {
+    "Real": {
+      "precision": 0.9945652173913043,
+      "recall": 0.9786096256684492,
+      "f1-score": 0.9865229110512129,
+      "support": 187.0
+    },
+    "Fake": {
+      "precision": 0.9789473684210527,
+      "recall": 0.9946524064171123,
+      "f1-score": 0.986737400530504,
+      "support": 187.0
+    },
+    "accuracy": 0.9866310160427807,
+    "macro avg": {
+      "precision": 0.9867562929061785,
+      "recall": 0.9866310160427807,
+      "f1-score": 0.9866301557908584,
+      "support": 374.0
+    },
+    "weighted avg": {
+      "precision": 0.9867562929061785,
+      "recall": 0.9866310160427807,
+      "f1-score": 0.9866301557908586,
+      "support": 374.0
+    }
+  },
+  "evaluation_source": "saved test confusion matrix; no new inference run",
+  "confusion_matrix_file": "/mnt/c/Users/rahul/OneDrive - presidencyuniversity.in/Documents/Fakenewsdetection/models/audio/secureaudio_confusion_matrix.csv",
+  "saved_report_file": "/mnt/c/Users/rahul/OneDrive - presidencyuniversity.in/Documents/Fakenewsdetection/models/audio/secureaudio_test_report.json",
+  "saved_report_contents": {
+    "dataset": "SecureAudio standardized corpus",
+    "feature_type": "MFCC and spectral statistics",
+    "classifier": "RBF SVM",
+    "training_files": 1193,
+    "validation_files": 299,
+    "test_files": 374,
+    "test_accuracy": 0.9866310160427807,
+    "classification_report": {
+      "Real": {
+        "precision": 0.9945652173913043,
+        "recall": 0.9786096256684492,
+        "f1-score": 0.9865229110512129,
+        "support": 187.0
+      },
+      "Fake": {
+        "precision": 0.9789473684210527,
+        "recall": 0.9946524064171123,
+        "f1-score": 0.986737400530504,
+        "support": 187.0
+      },
+      "accuracy": 0.9866310160427807,
+      "macro avg": {
+        "precision": 0.9867562929061785,
+        "recall": 0.9866310160427807,
+        "f1-score": 0.9866301557908584,
+        "support": 374.0
+      },
+      "weighted avg": {
+        "precision": 0.9867562929061785,
+        "recall": 0.9866310160427807,
+        "f1-score": 0.9866301557908586,
+        "support": 374.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        183,
+        4
+      ],
+      [
+        1,
+        186
+      ]
+    ]
+  }
+}
